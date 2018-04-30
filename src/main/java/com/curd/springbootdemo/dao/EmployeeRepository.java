@@ -1,6 +1,5 @@
 package com.curd.springbootdemo.dao;
 
-import com.curd.entity.Employee;
 import com.curd.springbootdemo.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 
