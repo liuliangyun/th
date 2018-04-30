@@ -2,6 +2,7 @@ package com.curd.springbootdemo.controller;
 
 import com.curd.springbootdemo.dao.EmployeeRepository;
 import com.curd.springbootdemo.entity.Employee;
+import com.curd.springbootdemo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +16,9 @@ import java.util.Optional;
 public class EmployeeController {
     @Autowired
     EmployeeRepository employeeRepository;
+    @Autowired
+    EmployeeService employeeService;
+
     /**
      * 查询所有人员列表
      *
@@ -101,4 +105,11 @@ public class EmployeeController {
         return employeeRepository.findByAge(age);
     }
 
+    /**
+     * 事务测试
+     */
+    @PostMapping("/employee/two")
+    public void employeeTwo(){
+        employeeService.insertTwo();
+    }
 }
